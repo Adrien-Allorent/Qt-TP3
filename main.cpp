@@ -1,6 +1,17 @@
 #include <iostream>
+#include <QApplication>
+#include <QPushButton>
+#include "class.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+void Exo1(){
+    fenetre widget;
+    widget.show();
+}
+
+int main(int argc, char **argv){
+    QApplication app (argc, argv);
+
+    Exo1();
+
+    return app.exec();
 }
