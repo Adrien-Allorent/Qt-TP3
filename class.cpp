@@ -1,14 +1,21 @@
-#include <QtWidgets/QVBoxLayout>
 #include "class.h"
 
-fenetre::fenetre(QWidget* widget) {
+fenetre::fenetre(QWidget* widget){
     setWindowTitle("IHM");
-    this->setMinimumSize(200,200);
+    this->setMinimumSize(300,150);
+
     QVBoxLayout* layout = new QVBoxLayout();
-    bar = new QProgressBar();
-    slider =new QSlider(Qt::Horizontal);
+
+    this->bar = new QProgressBar();
+    this->slider =new QSlider(Qt::Horizontal);
+
     layout->addWidget(bar);
     layout->addWidget(slider);
     this->setLayout(layout);
 
+    bar->setValue(0);
+    slider->setMinimum(0);
+    slider->setMaximum(100);
+
+    connect(slider, SIGNAL(valueChanged(int)), bar, SLOT(setValue(int)));
 }

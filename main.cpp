@@ -3,15 +3,11 @@
 #include <QPushButton>
 #include "class.h"
 
-void Exo1(){
-    fenetre widget;
-    widget.show();
-}
-
 int main(int argc, char **argv){
     QApplication app (argc, argv);
 
-    Exo1();
+    fenetre test;
+    test.show();
 
     return app.exec();
 }
