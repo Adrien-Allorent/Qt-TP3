@@ -1,14 +1,14 @@
 #include <iostream>
 #include <QApplication>
-#include <QPushButton>
-#include "class.h"
+#include "IHM.h"
+#include "IHM_2.h"
 
-int main(int argc, char **argv){
-    QApplication app (argc, argv);
+int main(int argc, char** argv) {
+    auto app = new QApplication (argc, argv);
+//    auto ihm = new IHM;
+//    ihm->show();
 
-//    fenetre1 test;
-    fenetre2 test;
-    test.show();
-
-    return app.exec();
+    auto ihm2 = new IHM_2("text");
+    ihm2->show();
+    return app->exec();
 }
